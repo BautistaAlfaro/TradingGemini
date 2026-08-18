@@ -137,7 +137,15 @@ export const PillarsSection: React.FC = () => {
               <div className="absolute top-3 left-4 font-mono text-[10px] text-slate-500 uppercase tracking-widest">
                 Matriz 3D // {PILLARS[selectedIdx].title}
               </div>
-              <Canvas camera={{ position: [0, 0, 5.5], fov: 45 }}>
+              <Canvas
+                camera={{ position: [0, 0, 5.5], fov: 45 }}
+                dpr={[1, 1.25]}
+                gl={{
+                  antialias: false,
+                  powerPreference: 'high-performance',
+                  stencil: false,
+                }}
+              >
                 <Suspense fallback={null}>
                   <ambientLight intensity={0.7} />
                   <pointLight position={[5, 5, 5]} intensity={1.5} />

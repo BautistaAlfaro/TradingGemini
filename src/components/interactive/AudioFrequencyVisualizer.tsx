@@ -2,18 +2,23 @@ import React, { useEffect, useRef } from 'react';
 
 export const AudioFrequencyVisualizer: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    const container = containerRef.current;
+    if (!canvas || !container) return;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     let animId: number;
     let phase = 0;
-    const barCount = 36;
+    let isVisible = false;
+    const barCount = 32;
 
     const render = () => {
+      if (!isVisible) return;
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       const width = canvas.width;
@@ -43,18 +48,32 @@ export const AudioFrequencyVisualizer: React.FC = () => {
       animId = requestAnimationFrame(render);
     };
 
-    render();
+    // Pause rendering when element is not visible in viewport (crucial for mobile performance)
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+        if (isVisible) {
+          animId = requestAnimationFrame(render);
+        } else {
+          cancelAnimationFrame(animId);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(container);
 
     return () => {
       cancelAnimationFrame(animId);
+      observer.disconnect();
     };
   }, []);
 
   return (
-    <div className="w-full h-12 flex items-center justify-center overflow-hidden">
+    <div ref={containerRef} className="w-full h-12 flex items-center justify-center overflow-hidden">
       <canvas
         ref={canvasRef}
-        width={340}
+        width={320}
         height={48}
         className="w-full h-full object-contain pointer-events-none"
       />
