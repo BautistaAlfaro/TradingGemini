@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Volume2, VolumeX, ArrowUpRight, Menu, X } from 'lucide-react';
+import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { audioEngine } from '../../utils/audio';
 
 interface NavbarProps {
@@ -8,7 +8,6 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenApplication }) => {
   const [scrolled, setScrolled] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -18,12 +17,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenApplication }) => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const toggleSound = () => {
-    const muted = audioEngine.toggleMute();
-    setIsMuted(muted);
-    if (!muted) audioEngine.playClickSound();
-  };
 
   const navLinks = [
     { label: 'DIAGNÓSTICO', href: '#diagnostico' },
@@ -81,19 +74,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenApplication }) => {
             ))}
           </nav>
 
-          {/* Right Actions: Sound Toggle + CTA */}
+          {/* Right Actions: CTA + Mobile Trigger */}
           <div className="flex items-center gap-3">
-            
-            {/* Audio Toggle Button */}
-            <button
-              onClick={toggleSound}
-              className="p-2.5 rounded-xl glass-panel text-slate-400 hover:text-white hover:border-kbj-green/40 transition-colors"
-              title={isMuted ? 'Activar sonido' : 'Silenciar'}
-              aria-label="Alternar audio interactivo"
-            >
-              {isMuted ? <VolumeX className="w-4 h-4 text-red-400" /> : <Volume2 className="w-4 h-4 text-kbj-lime" />}
-            </button>
-
             {/* Primary Action Button */}
             <button
               onClick={() => {
