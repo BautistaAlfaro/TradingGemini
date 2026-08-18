@@ -23,7 +23,7 @@ export const QuantumParticleWord: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
   const mousePosRef = useRef<{ x: number; y: number } | null>(null);
 
-  const letters = 'CRITERIO.'.split('');
+  const letters = 'CRITERIO'.split('');
 
   useEffect(() => {
     const canvas = canvasRef.current;

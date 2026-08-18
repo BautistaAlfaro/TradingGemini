@@ -110,7 +110,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenApplication }) =
                 animate="visible"
                 className="inline-block text-white"
               >
-                CRITERIO.
+                CRITERIO
               </motion.span>
             </div>
 

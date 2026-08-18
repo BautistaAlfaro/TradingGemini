@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { audioEngine } from '../../utils/audio';
 
 export const QuantumStructureWord: React.FC = () => {
-  const letters = 'ESTRUCTURA.'.split('');
+  const letters = 'ESTRUCTURA'.split('');
 
   const containerVariants = {
     hidden: { opacity: 0 },
