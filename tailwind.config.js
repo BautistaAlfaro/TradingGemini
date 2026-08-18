@@ -27,10 +27,10 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['Syne', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
         display: ['Syne', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
-        body: ['"Space Grotesk"', 'sans-serif'],
+        grotesk: ['"Space Grotesk"', 'sans-serif'],
       },
       boxShadow: {
         'glow-green': '0 0 35px -5px rgba(34, 197, 94, 0.35)',

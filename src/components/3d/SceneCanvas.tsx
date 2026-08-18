@@ -1,11 +1,29 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { TradingPrismMonolith3D } from './TradingPrismMonolith3D';
 import { FloatingParticles3D } from './FloatingParticles3D';
 
 export const SceneCanvas: React.FC = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // In Hero (scrollY < 150px): opacity is 0 so the Hero has ONLY the clean interactive candle chart
+  // Once user scrolls past Hero: opacity smoothly transitions to 1 for all subsequent sections
+  const isPastHero = scrollY > 150;
+  const opacity = isPastHero ? Math.min(1, (scrollY - 150) / 300) : 0;
+
   return (
-    <div className="fixed inset-0 w-full h-full pointer-events-none z-0">
+    <div
+      className="fixed inset-0 w-full h-full pointer-events-none z-0 transition-opacity duration-700"
+      style={{ opacity }}
+    >
       {/* Background Volumetric Lighting & Atmospheric Gradients */}
       <div className="absolute inset-0 bg-radial-glow opacity-80 pointer-events-none" />
       <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-kbj-lime/10 rounded-full blur-[150px] pointer-events-none animate-pulse-slow" />

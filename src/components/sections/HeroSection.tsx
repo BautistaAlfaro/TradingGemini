@@ -28,7 +28,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenApplication }) =
   };
 
   const wordSlideVariant = (delay: number) => ({
-    hidden: { opacity: 0, x: -80, filter: 'blur(8px)' },
+    hidden: { opacity: 0, x: -60, filter: 'blur(6px)' },
     visible: {
       opacity: 1,
       x: 0,
@@ -37,7 +37,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenApplication }) =
         delay,
         type: 'spring',
         stiffness: 260,
-        damping: 20,
+        damping: 22,
       },
     },
   });
@@ -51,18 +51,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenApplication }) =
       <CandleHero />
 
       {/* Main Hero Kinetic Typography & Actions */}
-      <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 my-auto py-10 relative z-10 pointer-events-auto">
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 my-auto py-8 relative z-10 pointer-events-auto">
         <div
           className={`max-w-4xl space-y-6 transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
             mobileShiftUp ? '-translate-y-[20%] md:translate-y-0' : 'translate-y-0'
           }`}
         >
           
-          {/* Animated Headline - Scaled down 40% on desktop */}
-          <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-black tracking-tight text-white uppercase leading-[0.98]">
+          {/* Animated Headline */}
+          <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-black tracking-tight text-white uppercase leading-[1.02]">
             
             {/* Line 1: TRADING CON */}
-            <div className="flex flex-wrap items-baseline gap-x-3 sm:gap-x-5">
+            <div className="flex flex-wrap items-baseline gap-x-3 sm:gap-x-4">
               <motion.span
                 variants={wordSlideVariant(0.1)}
                 initial="hidden"
@@ -72,7 +72,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenApplication }) =
                 TRADING
               </motion.span>
               <motion.span
-                variants={wordSlideVariant(0.22)}
+                variants={wordSlideVariant(0.2)}
                 initial="hidden"
                 animate="visible"
                 className="inline-block text-slate-300 font-bold"
@@ -82,14 +82,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenApplication }) =
             </div>
 
             {/* Line 2: ESTRUCTURA. (Falling from ceiling) */}
-            <div className="block my-1 sm:my-1.5">
+            <div className="block my-1 sm:my-2">
               <QuantumStructureWord />
             </div>
 
             {/* Line 3: DECISIONES CON CRITERIO. */}
-            <div className="flex flex-wrap items-baseline gap-x-3 sm:gap-x-5">
+            <div className="flex flex-wrap items-baseline gap-x-3 sm:gap-x-4">
               <motion.span
-                variants={wordSlideVariant(0.85)}
+                variants={wordSlideVariant(0.75)}
                 initial="hidden"
                 animate="visible"
                 className="inline-block text-white"
@@ -97,7 +97,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenApplication }) =
                 DECISIONES
               </motion.span>
               <motion.span
-                variants={wordSlideVariant(0.95)}
+                variants={wordSlideVariant(0.85)}
                 initial="hidden"
                 animate="visible"
                 className="inline-block text-slate-300 font-bold"
@@ -105,7 +105,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenApplication }) =
                 CON
               </motion.span>
               <motion.span
-                variants={wordSlideVariant(1.05)}
+                variants={wordSlideVariant(0.95)}
                 initial="hidden"
                 animate="visible"
                 className="inline-block text-white"
@@ -117,12 +117,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenApplication }) =
           </h1>
 
           {/* Desktop Subtitle & CTAs (Shown on md+ screens) */}
-          <div className="hidden md:block space-y-6 pt-2">
-            <p className="text-base sm:text-lg text-slate-300 max-w-xl leading-relaxed font-normal">
+          <div className="hidden md:block space-y-6 pt-1">
+            <p className="text-base sm:text-lg text-slate-300 max-w-xl leading-relaxed font-sans font-normal">
               Mentoría personalizada para traders que quieren dejar de improvisar y construir un proceso sólido, consistente y rentable en el tiempo.
             </p>
 
-            <div className="pt-2 flex flex-wrap items-center gap-4">
+            <div className="pt-1 flex flex-wrap items-center gap-4">
               <button
                 onClick={() => {
                   audioEngine.playClickSound();
@@ -177,23 +177,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenApplication }) =
         )}
       </AnimatePresence>
 
-      {/* Desktop Bottom Telemetry Metrics Strip (Shown on md+ screens) */}
+      {/* Desktop Bottom Telemetry Metrics Strip */}
       <div className="hidden md:flex max-w-7xl mx-auto w-full px-4 sm:px-8 flex-row items-center justify-between gap-6 pt-6 border-t border-white/[0.08] relative z-10 pointer-events-auto">
         <div className="grid grid-cols-4 gap-10 text-left w-auto">
           <div>
-            <div className="font-mono text-[10px] uppercase text-slate-500 tracking-wider">RATIO R:R MÍNIMO</div>
+            <div className="font-mono text-[10px] uppercase text-slate-400 tracking-wider">RATIO R:R MÍNIMO</div>
             <div className="font-mono text-lg font-bold text-kbj-lime">1 : 3.0+ RR</div>
           </div>
           <div>
-            <div className="font-mono text-[10px] uppercase text-slate-500 tracking-wider">RIESGO CONTROLADO</div>
+            <div className="font-mono text-[10px] uppercase text-slate-400 tracking-wider">RIESGO CONTROLADO</div>
             <div className="font-mono text-lg font-bold text-white">≤ 1.0% POR TRADE</div>
           </div>
           <div>
-            <div className="font-mono text-[10px] uppercase text-slate-500 tracking-wider">CANAL DE SEÑALES</div>
+            <div className="font-mono text-[10px] uppercase text-slate-400 tracking-wider">CANAL DE SEÑALES</div>
             <div className="font-mono text-lg font-bold text-red-400">0% (SOLO CRITERIO)</div>
           </div>
           <div>
-            <div className="font-mono text-[10px] uppercase text-slate-500 tracking-wider">MODALIDAD DE REVISIÓN</div>
+            <div className="font-mono text-[10px] uppercase text-slate-400 tracking-wider">MODALIDAD DE REVISIÓN</div>
             <div className="font-mono text-lg font-bold text-kbj-green">1 A 1 DIRECTO</div>
           </div>
         </div>

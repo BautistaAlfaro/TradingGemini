@@ -10,8 +10,8 @@ export const QuantumStructureWord: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1, // Clear sequential drop
-        delayChildren: 0.15,
+        staggerChildren: 0.08,
+        delayChildren: 0.2,
       },
     },
   };
@@ -19,22 +19,20 @@ export const QuantumStructureWord: React.FC = () => {
   const letterVariants = {
     hidden: {
       opacity: 0,
-      y: -650, // Falls from the very top ceiling
-      scale: 1.6,
-      rotateZ: -20,
-      filter: 'blur(12px)',
+      y: -550,
+      rotateZ: -12,
+      filter: 'blur(10px)',
     },
     visible: {
       opacity: 1,
       y: 0,
-      scale: 1,
       rotateZ: 0,
       filter: 'blur(0px)',
       transition: {
         type: 'spring',
-        stiffness: 200,
-        damping: 14,
-        mass: 1.1,
+        stiffness: 240,
+        damping: 16,
+        mass: 0.9,
       },
     },
   };
@@ -44,20 +42,19 @@ export const QuantumStructureWord: React.FC = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="inline-flex flex-wrap prismatic-flux-text select-none tracking-tight sm:tracking-wide font-black"
+      className="inline-flex flex-wrap font-display font-black tracking-normal prismatic-flux-text select-none"
     >
       {letters.map((char, i) => (
         <motion.span
           key={i}
           variants={letterVariants}
           whileHover={{
-            scale: 1.25,
-            y: -12,
-            rotateZ: (i % 2 === 0 ? 8 : -8),
-            transition: { type: 'spring', stiffness: 500, damping: 10 },
+            scale: 1.15,
+            y: -8,
+            transition: { type: 'spring', stiffness: 500, damping: 12 },
           }}
           onMouseEnter={() => audioEngine.playHoverSound()}
-          className="inline-block cursor-default transition-colors duration-200"
+          className="inline-block cursor-default"
         >
           {char}
         </motion.span>
