@@ -10,7 +10,7 @@ export const QuantumStructureWord: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.08,
+        staggerChildren: 0.07,
         delayChildren: 0.2,
       },
     },
@@ -19,9 +19,9 @@ export const QuantumStructureWord: React.FC = () => {
   const letterVariants = {
     hidden: {
       opacity: 0,
-      y: -550,
-      rotateZ: -12,
-      filter: 'blur(10px)',
+      y: -400,
+      rotateZ: -10,
+      filter: 'blur(8px)',
     },
     visible: {
       opacity: 1,
@@ -30,8 +30,8 @@ export const QuantumStructureWord: React.FC = () => {
       filter: 'blur(0px)',
       transition: {
         type: 'spring',
-        stiffness: 240,
-        damping: 16,
+        stiffness: 260,
+        damping: 18,
         mass: 0.9,
       },
     },
@@ -42,7 +42,7 @@ export const QuantumStructureWord: React.FC = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="inline-flex flex-wrap font-display font-black tracking-normal prismatic-flux-text select-none"
+      className="inline-flex flex-wrap font-display font-black tracking-tight sm:tracking-normal prismatic-flux-text select-none text-glow-subtle"
     >
       {letters.map((char, i) => (
         <motion.span
@@ -50,7 +50,7 @@ export const QuantumStructureWord: React.FC = () => {
           variants={letterVariants}
           whileHover={{
             scale: 1.15,
-            y: -8,
+            y: -6,
             transition: { type: 'spring', stiffness: 500, damping: 12 },
           }}
           onMouseEnter={() => audioEngine.playHoverSound()}

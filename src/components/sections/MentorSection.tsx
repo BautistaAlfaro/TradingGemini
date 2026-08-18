@@ -15,7 +15,7 @@ export const MentorSection: React.FC<{ onOpenApplication: () => void }> = ({ onO
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-3xl overflow-hidden border border-white/15 bg-[#070A0F]/80 backdrop-blur-md shadow-2xl">
               
-              <div className="relative h-[460px] sm:h-[520px] w-full overflow-hidden bg-slate-900">
+              <div className="relative h-[420px] sm:h-[480px] w-full overflow-hidden bg-slate-900">
                 <img
                   src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80"
                   alt="KBJ Trading Desk"
@@ -23,14 +23,8 @@ export const MentorSection: React.FC<{ onOpenApplication: () => void }> = ({ onO
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#030508] via-transparent to-black/40" />
 
-                {/* Overlaid Telemetry Top Box */}
-                <div className="absolute top-4 left-4 right-4 p-3 rounded-xl bg-[#030508]/85 border border-white/10 backdrop-blur-md flex items-center justify-between text-xs font-mono text-slate-300">
-                  <span className="text-kbj-lime font-bold">Sesión en Vivo // Análisis Técnico</span>
-                  <span className="text-slate-400">Trading Desk</span>
-                </div>
-
                 {/* Live Real-time Audio Frequency Wave HUD */}
-                <div className="absolute bottom-24 left-4 right-4 p-3 rounded-2xl bg-[#030508]/85 border border-white/10 backdrop-blur-md">
+                <div className="absolute bottom-20 left-4 right-4 p-3 rounded-2xl bg-[#030508]/85 border border-white/10 backdrop-blur-md">
                   <div className="flex items-center justify-between text-[10px] font-mono text-slate-500 uppercase pb-1">
                     <span>Frecuencia Acústica // 432 Hz</span>
                     <span className="text-kbj-green font-bold">Activo</span>
@@ -39,8 +33,8 @@ export const MentorSection: React.FC<{ onOpenApplication: () => void }> = ({ onO
                 </div>
 
                 {/* Overlaid Bottom Quote */}
-                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-[#070A0F]/90 border border-white/10 backdrop-blur-md space-y-1">
-                  <div className="text-xs font-display font-bold text-white uppercase leading-snug">
+                <div className="absolute bottom-4 left-4 right-4 p-3.5 rounded-2xl bg-[#070A0F]/90 border border-white/10 backdrop-blur-md space-y-1">
+                  <div className="text-xs font-sans font-medium text-white leading-snug">
                     "El trading profesional se juega en el control del riesgo, no en la euforia del acierto."
                   </div>
                 </div>

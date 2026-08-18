@@ -28,7 +28,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenApplication }) =
   };
 
   const wordSlideVariant = (delay: number) => ({
-    hidden: { opacity: 0, x: -60, filter: 'blur(6px)' },
+    hidden: { opacity: 0, x: -50, filter: 'blur(6px)' },
     visible: {
       opacity: 1,
       x: 0,
@@ -45,24 +45,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenApplication }) =
   return (
     <section
       id="hero"
-      className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden pt-36 pb-16 z-10"
+      className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden pt-28 sm:pt-36 pb-16 z-10"
     >
       {/* Full-Viewport Interactive Dancing Candle Canvas Background */}
       <CandleHero />
 
       {/* Main Hero Kinetic Typography & Actions */}
-      <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 my-auto py-8 relative z-10 pointer-events-auto">
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-8 my-auto py-6 sm:py-8 relative z-10 pointer-events-auto">
         <div
-          className={`max-w-4xl space-y-6 transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-            mobileShiftUp ? '-translate-y-[20%] md:translate-y-0' : 'translate-y-0'
+          className={`max-w-4xl space-y-4 sm:space-y-6 transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            mobileShiftUp ? '-translate-y-[16%] md:translate-y-0' : 'translate-y-0'
           }`}
         >
           
-          {/* Animated Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-black tracking-tight text-white uppercase leading-[1.02]">
+          {/* Animated Headline - Optimized for both mobile and desktop */}
+          <h1 className="text-3xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-black tracking-tight text-white uppercase leading-[1.05]">
             
             {/* Line 1: TRADING CON */}
-            <div className="flex flex-wrap items-baseline gap-x-3 sm:gap-x-4">
+            <div className="flex flex-wrap items-baseline gap-x-2.5 sm:gap-x-4">
               <motion.span
                 variants={wordSlideVariant(0.1)}
                 initial="hidden"
@@ -87,7 +87,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenApplication }) =
             </div>
 
             {/* Line 3: DECISIONES CON CRITERIO. */}
-            <div className="flex flex-wrap items-baseline gap-x-3 sm:gap-x-4">
+            <div className="flex flex-wrap items-baseline gap-x-2.5 sm:gap-x-4">
               <motion.span
                 variants={wordSlideVariant(0.75)}
                 initial="hidden"
