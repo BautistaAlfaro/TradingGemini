@@ -9,7 +9,7 @@ interface OverviewSectionProps {
 export const OverviewSection: React.FC<OverviewSectionProps> = ({ onOpenApplication }) => {
   return (
     // Render only on mobile (md:hidden)
-    <section id="resumen-mobile" className="md:hidden relative py-20 bg-transparent border-t border-white/[0.06] z-10">
+    <section id="resumen-mobile" className="md:hidden relative py-20 bg-[#05070B]/75 backdrop-blur-md border-t border-white/[0.08] z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
         
         {/* Main Subtitle */}

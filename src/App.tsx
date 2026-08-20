@@ -15,16 +15,24 @@ import { CtaSection } from './components/sections/CtaSection';
 import { FaqSection } from './components/sections/FaqSection';
 import { Footer } from './components/sections/Footer';
 import { ApplicationModal } from './components/ui/ApplicationModal';
+import { VideoModal } from './components/ui/VideoModal';
 import { initSmoothScroll } from './utils/smoothScroll';
 
 export const App: React.FC = () => {
   const [isApplicationOpen, setIsApplicationOpen] = useState(false);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   useEffect(() => {
     // Initialize Lenis Smooth Scrolling synchronized with GSAP ScrollTrigger
     const lenisInstance = initSmoothScroll();
 
+    // Automatically trigger Video Popup Modal 1.4s after page load
+    const videoTimer = setTimeout(() => {
+      setIsVideoModalOpen(true);
+    }, 1400);
+
     return () => {
+      clearTimeout(videoTimer);
       lenisInstance.destroy();
     };
   }, []);
@@ -34,7 +42,7 @@ export const App: React.FC = () => {
       {/* Magnetic Fluid Custom Cursor */}
       <CustomCursor />
 
-      {/* 3D WebGL Fixed Optical Canvas Stage with Transmission Monolith */}
+      {/* 3D WebGL Fixed Optical Canvas Stage with Institutional Order Flow & Candles */}
       <SceneCanvas />
 
       {/* Top Hairline Telemetry Glow */}
@@ -60,6 +68,12 @@ export const App: React.FC = () => {
 
       {/* Footer */}
       <Footer />
+
+      {/* Video Popup Modal */}
+      <VideoModal
+        isOpen={isVideoModalOpen}
+        onClose={() => setIsVideoModalOpen(false)}
+      />
 
       {/* Application & WhatsApp Direct Modal */}
       <ApplicationModal

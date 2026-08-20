@@ -15,7 +15,7 @@ export const RiskCalculatorWidget: React.FC = () => {
   const isFavorable = parseFloat(riskRewardRatio) >= 2.5;
 
   return (
-    <section id="calculadora" className="relative py-32 bg-transparent border-t border-white/[0.08] z-10">
+    <section id="calculadora" className="relative py-32 bg-[#030508]/75 backdrop-blur-md border-t border-white/[0.08] z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         
         {/* Section Header */}

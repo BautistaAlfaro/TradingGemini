@@ -1,109 +1,117 @@
-import { PainPoint, Pillar, MethodStep, Deliverable, MetricCounter, Testimonial, FaqItem } from '../types';
+import {
+  PainPoint,
+  Pillar,
+  MethodStep,
+  Deliverable,
+  MetricCounter,
+  Testimonial,
+  FaqItem
+} from '../types';
 
 export const PAIN_POINTS: PainPoint[] = [
   {
-    id: 'pain-1',
-    icon: 'Compass',
-    title: 'Entradas sin escenario definido',
-    description: 'Entrás a operaciones sin tener un escenario completamente validado. Reaccionás a lo que ves en el segundo en lugar de esperar tu confirmación.',
-    solution: 'Protocolo de validación previa en 3 pasos antes de tocar el botón de compra o venta.',
-    stat: '84% de pérdidas evitables'
-  },
-  {
-    id: 'pain-2',
+    id: 'friccion-01',
     icon: 'Flame',
-    title: 'Sobreoperar tras una pérdida',
-    description: 'Te cuesta aceptar un stop loss y entrás inmediatamente a "recuperar" el dinero, destruyendo tu cuenta en minutos por revancha.',
-    solution: 'Reglas de corte diario automatizadas y reconstrucción de la relación con el error.',
-    stat: 'Revenge Trading eliminado'
+    title: 'OPERAR POR IMPULSO',
+    description: 'Entrás al mercado porque ves una vela grande moviéndose rápido, sentís que te estás perdiendo el movimiento (FOMO) y cuando entrás, el precio se da vuelta instantáneamente.',
+    solution: 'Protocolo de confirmación previo a cualquier orden. Si no cumple todas las reglas, no hay trade.',
+    stat: 'Causa #1 de liquidación de cuentas'
   },
   {
-    id: 'pain-3',
-    icon: 'ShieldAlert',
-    title: 'Falta de gestión y riesgo caótico',
-    description: 'No sabés cuánto arriesgar en cada trade ni tenés un cálculo exacto de invalidación según tu capital.',
-    solution: 'Fórmulas matemáticas de tamaño de posición institucional con R:R mínimo 1:2.5.',
-    stat: 'Riesgo fijo ≤ 1% por trade'
+    id: 'friccion-02',
+    icon: 'TrendingDown',
+    title: 'SOBREOPERAR & REVENGE TRADING',
+    description: 'Tuviste un trade negativo y en lugar de cerrar la plataforma, abrís tres operaciones más en la misma sesión para recuperar la pérdida, destruyendo la cuenta.',
+    solution: 'Reglas estrictas de Stop Operativo Diario. Límite máximo de pérdidas por sesión no negociable.',
+    stat: '90% del capital se pierde en trades impulsivos'
   },
   {
-    id: 'pain-4',
+    id: 'friccion-03',
     icon: 'Shuffle',
-    title: 'Síndrome del salto de estrategia',
-    description: 'Cambiás de método cada semana: hoy Smart Money, mañana Indicadores, pasado Order Flow. Nunca acumulás muestra estadística.',
-    solution: 'Un único sistema depurado con más de 100 backtests documentados paso a paso.',
-    stat: '1 Solo Sistema Maestro'
+    title: 'CAMBIAR DE ESTRATEGIA CONSTANTEMENTE',
+    description: 'Probás un indicador nuevo cada semana: cruce de medias, Smart Money, ondas de Elliott, soporte y resistencia. Nunca le das tiempo a un método de madurar estadísticamente.',
+    solution: 'Especialización en un único modelo de alta probabilidad con ventaja matemática documentada.',
+    stat: 'El trading sin proceso no tiene ventaja estadística'
   },
   {
-    id: 'pain-5',
-    icon: 'HelpCircle',
-    title: 'Conocimiento sin consistencia',
-    description: 'Sabés la teoría de memoria, pero cuando el gráfico se mueve en vivo dudás, entrás tarde o cerrás operaciones ganadoras antes de tiempo.',
-    solution: 'Checklists mecánicos de ejecución en vivo que anulan la duda operativa.',
-    stat: 'Criterio 100% objetivo'
+    id: 'friccion-04',
+    icon: 'AlertTriangle',
+    title: 'NO TENER UN PLAN DE RIESGO MATEMÁTICO',
+    description: 'Arriesgás el 1% en un trade, el 5% en el siguiente porque estás "seguro" de que se va a dar, y cuando falla, borrás las ganancias de todo un mes en 20 minutos.',
+    solution: 'Calculadora y dimensionamiento mecánico de lotaje según porcentaje fijo de riesgo por operación.',
+    stat: 'Sin gestión de riesgo no hay supervivencia'
   },
   {
-    id: 'pain-6',
-    icon: 'Radio',
-    title: 'Soledad y contenido disperso',
-    description: 'Consumís horas de videos en YouTube sin orden pedagógico y no tenés a quién consultarle por qué falló una operación real.',
-    solution: 'Feedback 1 a 1 de tus diarios de trading y sesiones semanales en vivo de mercado real.',
-    stat: 'Mentoring semanal directo'
+    id: 'friccion-05',
+    icon: 'EyeOff',
+    title: 'FALTA DE CRITERIO PROPIO Y DEPENDENCIA',
+    description: 'Buscás canales de señales o grupos de alertas esperando que alguien te diga cuándo comprar y cuándo vender, sin entender por qué se toma la decisión ni cuándo invalidarla.',
+    solution: 'Desarrollo de lectura de mercado independiente y análisis institucional autónomo.',
+    stat: 'El 98% de los canales de señales son insostenibles'
+  },
+  {
+    id: 'friccion-06',
+    icon: 'Clock',
+    title: 'NO LLEVAR REGISTRO NI ESTADÍSTICAS',
+    description: 'Cerrás la sesión y no sabés cuál es tu win rate real, cuál es tu ratio riesgo-beneficio promedio ni en qué días u horarios sos rentable.',
+    solution: 'Journaling cuantitativo y auditoría continua de métricas para optimizar tu toma de decisiones.',
+    stat: 'Lo que no se mide no se puede mejorar'
   }
 ];
 
 export const PILLARS: Pillar[] = [
   {
     number: '01',
-    title: 'ESTRATEGIA',
-    subtitle: 'Ventaja Estadística & Contexto',
-    description: 'Aprendé a identificar escenarios de mercado de alta probabilidad, establecer criterios claros de entrada y reconocer cuándo existe —y cuándo NO— una ventaja estadística real.',
+    title: 'ESTRUCTURA',
+    subtitle: 'Flujo de Órdenes & Liquidez Institucional',
+    description: 'Entender cómo se posicionan los grandes participantes del mercado. Identificar zonas de liquidez, desequilibrios (Fair Value Gaps) y cambios de estructura real frente a trampas inducidas a traders minoristas.',
     details: [
-      'Identificación de liquidez y bloques de órdenes institucionales',
-      'Mapeo de fractales y estructura de mercado multitemporal',
-      'Filtrado de zonas de baja probabilidad para no regalar comisiones',
-      'Definición de modelos de entrada con edge cuantitativo medible'
+      'Identificación de liquidez interna y externa',
+      'Desequilibrios y zonas de entrega de precio eficiente',
+      'Filtrado de rupturas falsas e inducciones minoristas',
+      'Mapeo de estructura en temporalidades mayores (HTF)'
     ],
-    icon: 'Target',
+    icon: 'Layers',
     accentColor: 'lime'
   },
   {
     number: '02',
-    title: 'GESTIÓN DE RIESGO',
-    subtitle: 'La Armadura del Capital',
-    description: 'Definí cuánto estás dispuesto a perder antes de entrar al mercado y aprendé a proteger tu capital como la parte más sagrada de todo el proceso.',
+    title: 'CRITERIO',
+    subtitle: 'Análisis Contextual & Asimetría',
+    description: 'Saber qué buscar, pero sobre todo, cuándo NO operar. El 70% de la consistencia consiste en mantenerse al margen en condiciones de baja probabilidad y esperar los escenarios donde la probabilidad está de tu lado.',
     details: [
-      'Dimensionamiento exacto de lotes basado en volatilidad y ATR',
-      'Ratio Riesgo/Beneficio asimétrico (mínimo 1:2.5 / 1:4)',
-      'Límites innegociables de drawdown diario y semanal',
-      'Estrategias de parciales y gestión dinámica de trailing stop'
+      'Filtrado contextual por sesiones (Londres / Nueva York)',
+      'Confluencia de factores macro y niveles clave',
+      'Reglas mecánicas de invalidación de escenario',
+      'Gestión de expectativas ante noticias de alto impacto'
     ],
-    icon: 'ShieldCheck',
+    icon: 'Compass',
     accentColor: 'green'
   },
   {
     number: '03',
-    title: 'EJECUCIÓN',
-    subtitle: 'Precisión y Mecánica de Entrada',
-    description: 'Entradas milimétricas, niveles de invalidación objetivos, gestión de posiciones abiertas y toma de decisiones sin titubear durante la sesión.',
+    title: 'GESTIÓN',
+    subtitle: 'Matemática del Riesgo & Asimetría R:R',
+    description: 'Un sistema rentable no necesita acertar el 90% de las veces. Con una relación riesgo-beneficio mínima de 1:3 y un riesgo controlado por operación, la matemática juega a tu favor sesión tras sesión.',
     details: [
-      'Trigger de confirmación en microestructuras',
-      'Colocación precisa del Stop Loss en puntos de invalidación estructural',
-      'Gestión activa sin sobre-microgestionar la posición',
-      'Registro fotográfico y métrico de la ejecución en vivo'
+      'Riesgo fijo por operación (0.5% - 1.0%)',
+      'Dimensionamiento exacto de lotaje antes de ingresar',
+      'Estrategias de toma de parciales y protección de capital',
+      'Control de Drawdown diario y semanal no negociable'
     ],
-    icon: 'Zap',
+    icon: 'ShieldCheck',
     accentColor: 'emerald'
   },
   {
     number: '04',
     title: 'PSICOLOGÍA',
-    subtitle: 'Disciplina Bajo Presión',
-    description: 'Control del FOMO, eliminación del revenge trading, paciencia para esperar el setup perfecto y neutralidad emocional frente a rachas negativas.',
+    subtitle: 'Disciplina Operativa & Control Emocional',
+    description: 'El mercado es un espejo de tus impulsos. Aprender a ejecutar con frialdad, aceptar las pérdidas como un costo operativo de negocio y eliminar el miedo a perder y la codicia por ganar de más.',
     details: [
-      'Reprogramación de la tolerancia a la incertidumbre y la pérdida',
-      'Rutina pre-market y post-market para descompresión mental',
-      'Eliminación de la euforia tras días verdes y del pánico tras días rojos',
-      'Construcción de disciplina como hábito y no como motivación pasajera'
+      'Eliminación del FOMO y el Revenge Trading',
+      'Desapego del resultado individual trade por trade',
+      'Rutina previa a la sesión de trading para enfoque mental',
+      'Journaling emocional y auditoría de decisiones'
     ],
     icon: 'Brain',
     accentColor: 'cyan'
@@ -113,9 +121,9 @@ export const PILLARS: Pillar[] = [
 export const METHOD_STEPS: MethodStep[] = [
   {
     number: '01',
-    title: 'FUNDAMENTOS & AUDITORÍA',
+    title: 'DIAGNÓSTICO & AUDITORÍA',
     phase: 'Semana 1-2',
-    description: 'Analizamos a fondo tu nivel actual, auditamos tu historial de trades anteriores, corregimos vicios conceptuales y construimos cimientos sólidos.',
+    description: 'Revisamos tu historial operativo previo, identificamos tus sesgos emocionales y corregimos los errores que te están haciendo perder capital.',
     deliverables: [
       'Auditoría diagnóstica de tu operativa previa',
       'Alineación de conceptos institucionales',
@@ -169,34 +177,15 @@ export const METHOD_STEPS: MethodStep[] = [
       'Revisión en video de tus ejecuciones semanales',
       'Identificación de fugas de capital y errores recurrentes'
     ],
-    tag: 'Optimización'
-  },
-  {
-    number: '06',
-    title: 'INDEPENDENCIA TOTAL',
-    phase: 'Continuo',
-    description: 'El objetivo final no es que dependas de nadie: es que abras el gráfico cada mañana con calma y sepas con total certeza qué hacer por vos mismo.',
-    deliverables: [
-      'Plan de trading personalizado a tus horarios y estilo de vida',
-      'Acceso vitalicio a la comunidad de traders graduados KBJ',
-      'Capacidad de autodiagnóstico y crecimiento autónomo'
-    ],
-    tag: 'Maestría'
+    tag: 'Consistencia'
   }
 ];
 
 export const DELIVERABLES: Deliverable[] = [
   {
-    title: 'Formación Paso a Paso',
-    description: 'Módulos estructurados desde cero hasta nivel institucional. Clases en vivo con interacción directa y acceso 24/7 a grabaciones en 4K.',
-    tag: 'En vivo + On Demand',
-    icon: 'GraduationCap',
-    span: 'col-span-1 md:col-span-2'
-  },
-  {
-    title: 'Sesiones de Mentoría & Q&A',
-    description: 'Espacio dedicado para resolver dudas complejas, analizar casos puntuales y desbloquear cualquier obstáculo en tu operativa.',
-    tag: '1 a 1 y Grupal',
+    title: 'Mentoría Personalizada 1 a 1',
+    description: 'Sesiones individuales directas con el mentor para analizar tu operativa, corregir fallas en vivo y acelerar tu curva de aprendizaje.',
+    tag: 'Acompañamiento Directo',
     icon: 'Users',
     span: 'col-span-1'
   },
@@ -274,31 +263,24 @@ export const MENTOR_METRICS: MetricCounter[] = [
 
 export const TESTIMONIALS: Testimonial[] = [
   {
-    name: 'Martín Rodríguez',
-    role: 'Trader de Futuros & NQ',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
-    quote: 'Antes entraba al mercado por pura intuición y ansiedad. Con KBJ aprendí a esperar mis escenarios con paciencia francotiradora y a gestionar mis riesgos correctamente. Pasé de quemar cuentas a tener meses en verde constante.',
-    winRateImpact: 'Win Rate: 62%',
-    riskManagement: 'R:R Promedio 1:3.2',
-    timeframe: 'Alumno 2024'
+    name: 'Luisina Sanchi',
+    location: 'Córdoba, Argentina',
+    role: 'Alumna de Mentoría KBJ',
+    rating: 5,
+    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&auto=format&fit=crop&q=80',
+    quote: 'La verdad que aprendí trading gracias a vos Tobi, a ver cómo se mueve el mercado, la acción de precio, me enseñaste una estrategia que hoy me permite tradear sola, cuando antes tenía muchos miedo.\n\nMe cambias la forma de pensar y no solo en el trading sino en la vida, en cada aspecto de la vida me hiciste mejorar con tu psicología.\n\nGracias como te digo siempre! Gracias por abrirme los ojos y pensé en positivo, en confiar en mí misma y enseñarme a tener amor propio. Vamos por más 💪 Esto recién empieza',
+    winRateImpact: 'Estrategia para operar sola',
+    riskManagement: 'Confianza y psicología aplicada'
   },
   {
-    name: 'Ignacio Peralta',
-    role: 'Trader de Forex (EURUSD / GBPUSD)',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
-    quote: 'Lo que más cambió fue mi mentalidad. Dejé de sobreoperar buscando revancha y empecé a tener un plan claro para cada sesión antes de que abra Nueva York. La mentoría pagó su valor en el primer mes.',
-    winRateImpact: 'Eliminó el 100% del Revenge Trading',
-    riskManagement: 'Drawdown Máx: 2.1%',
-    timeframe: 'Alumno 2024'
-  },
-  {
-    name: 'Lucas González',
-    role: 'Trader de Cuentas Fondeadas',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
-    quote: 'Tenía mucha información de YouTube pero ninguna estructura. Estaba abrumado. KBJ me ayudó a ordenar todo, descartar lo que no sirve y pasar dos evaluaciones de fondeo de $100k con total calma.',
-    winRateImpact: '2 Fondeos Aprobados ($200k)',
-    riskManagement: 'Riesgo 0.5% por operación',
-    timeframe: 'Alumno 2025'
+    name: 'Matías Bessio',
+    location: 'Rosario, Argentina',
+    role: 'Alumno de Mentoría KBJ',
+    rating: 5,
+    avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=200&auto=format&fit=crop&q=80',
+    quote: 'Hermano, te quería decir que la verdad las cosas que estoy logrando últimamente es increíble. 🤯\n\nAntes para mí retirar de una cuenta de fondeo me parecía imposible, y hoy ya retiré varias veces, crecí cuenta de capital propio y sigo pasando challeng como si nada 🤯📈💯.\n\nTodo gracias a vos hermano gracias al lavado de mente que me hiciste en lo mental y en, capacitar en aprender tremenda habilidad 🥹💯 Simplemente GRACIAS 🫶',
+    winRateImpact: 'Múltiples retiros de fondeo & Challenges pasados',
+    riskManagement: 'Crecimiento de capital propio'
   }
 ];
 
@@ -319,28 +301,23 @@ export const FAQS: FaqItem[] = [
     category: 'Modalidad'
   },
   {
-    question: '¿Qué mercados se enseñan a operar en KBJ?',
-    answer: 'La metodología de estructura institucional y gestión de riesgo aplica a cualquier mercado líquido: Forex (EUR/USD, GBP/USD, etc.), Índices Bursátiles (Nasdaq 100, S&P 500, Dow Jones), Criptomonedas de alta capitalización (BTC, ETH) y Commodities (Oro / XAUUSD). Vos elegís el activo que mejor se adapte a tu horario.',
-    category: 'Mercados'
+    question: '¿Cómo son las sesiones 1 a 1?',
+    answer: 'Nos conectamos por videollamada de forma privada para auditar tus operaciones, revisar tu journal, detectar fugas de capital y ajustar el plan a tus horarios y perfil de riesgo específico.',
+    category: 'Acompañamiento'
   },
   {
-    question: '¿Cuánto capital necesito para empezar a operar?',
-    answer: 'Durante la etapa de aprendizaje operarás en cuenta DEMO o con montos simbólicos. Nuestro enfoque principal te capacita tanto para gestionar tu propio capital de forma responsable como para postularte y superar pruebas de cuentas fondeadas (Prop Firms de $50k a $200k) sin arriesgar tus ahorros personales.',
+    question: '¿Se dan señales de trading en el programa?',
+    answer: 'No. No somos un canal de señales. El objetivo es que aprendas a leer el mercado y tomar tus propias decisiones con criterio técnico e independencia absoluta.',
+    category: 'Metodología'
+  },
+  {
+    question: '¿Qué capital necesito para empezar a operar?',
+    answer: 'Durante la etapa de aprendizaje operarás en cuenta demo para validar tu ventaja matemática sin arriesgar dinero real. Una vez demostrada tu consistencia en números, te enseñamos a gestionar cuentas de capital propio o aplicar a evaluaciones de cuentas de fondeo institucionales.',
     category: 'Capital'
   },
   {
-    question: '¿Las clases quedan grabadas si no puedo asistir en vivo?',
-    answer: 'Sí, todas las sesiones en vivo quedan grabadas en calidad 4K y se suben al portal exclusivo de estudiantes dentro de las 24 horas siguientes, con marcadores por tema para que puedas repasar cuando quieras.',
-    category: 'Acceso'
-  },
-  {
-    question: '¿La mentoría ofrece un canal de señales para copiar trades?',
-    answer: 'Rotundamente NO. En KBJ estamos en contra de los canales de señales que generan dependencia y queman cuentas. Te enseñamos a pensar, analizar y ejecutar con criterio propio para que seas un trader libre e independiente.',
-    category: 'Filosofía'
-  },
-  {
-    question: '¿Cómo es el proceso de admisión a KBJ?',
-    answer: 'Para mantener la máxima calidad y atención personalizada, los cupos son limitados por camada. Coordinamos una breve llamada de evaluación o intercambio por WhatsApp para entender tu situación actual y confirmar si la mentoría se alinea con tus metas.',
-    category: 'Admisión'
+    question: '¿Tengo garantía de resultados?',
+    answer: 'El trading conlleva riesgo de capital. Ningún profesional honesto puede garantizar retornos económicos fijos. Lo que garantizamos es un método estructurado paso a paso, acompañamiento personalizado y todas las herramientas para que construyas un proceso profesional.',
+    category: 'Garantía'
   }
 ];

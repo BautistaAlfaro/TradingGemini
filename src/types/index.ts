@@ -44,12 +44,13 @@ export interface MetricCounter {
 
 export interface Testimonial {
   name: string;
+  location: string;
   role: string;
-  avatar: string;
+  avatar?: string;
   quote: string;
-  winRateImpact: string;
-  riskManagement: string;
-  timeframe: string;
+  rating?: number;
+  winRateImpact?: string;
+  riskManagement?: string;
 }
 
 export interface FaqItem {

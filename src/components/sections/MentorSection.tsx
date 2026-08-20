@@ -5,7 +5,7 @@ import { audioEngine } from '../../utils/audio';
 
 export const MentorSection: React.FC<{ onOpenApplication: () => void }> = ({ onOpenApplication }) => {
   return (
-    <section id="mentor" className="relative py-32 bg-transparent border-t border-white/[0.08] z-10">
+    <section id="mentor" className="relative py-32 bg-[#05070B]/75 backdrop-blur-md border-t border-white/[0.08] z-10">
       <div className="max-w-5xl mx-auto px-4 sm:px-8 space-y-12">
         
         {/* Section Header & Narrative */}

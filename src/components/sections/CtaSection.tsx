@@ -8,7 +8,7 @@ interface CtaSectionProps {
 
 export const CtaSection: React.FC<CtaSectionProps> = ({ onOpenApplication }) => {
   return (
-    <section className="relative py-32 bg-transparent border-t border-white/[0.08] z-10 overflow-hidden">
+    <section className="relative py-32 bg-[#030508]/75 backdrop-blur-md border-t border-white/[0.08] z-10 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-8 relative z-10">
         
         <div className="rounded-3xl bg-gradient-to-b from-[#080C14]/90 via-[#0C121E]/90 to-[#080C14]/90 backdrop-blur-xl border border-kbj-green/40 p-10 sm:p-16 text-center shadow-2xl relative overflow-hidden">

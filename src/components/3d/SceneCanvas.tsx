@@ -1,6 +1,6 @@
 import React, { Suspense, useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { TradingPrismMonolith3D } from './TradingPrismMonolith3D';
+import { TradingOrderFlow3D } from './TradingOrderFlow3D';
 import { FloatingParticles3D } from './FloatingParticles3D';
 
 export const SceneCanvas: React.FC = () => {
@@ -51,24 +51,24 @@ export const SceneCanvas: React.FC = () => {
         className="w-full h-full pointer-events-none"
       >
         <Suspense fallback={null}>
-          <ambientLight intensity={0.9} />
+          <ambientLight intensity={1.1} />
           
           <spotLight
             position={[0, 10, 8]}
             angle={0.7}
             penumbra={0.9}
-            intensity={3.0}
+            intensity={3.2}
             color="#ffffff"
           />
           
           <pointLight position={[-7, 4, 3]} intensity={3.5} color="#22c55e" distance={18} />
           <pointLight position={[7, -4, 4]} intensity={3.0} color="#a3e635" distance={18} />
 
-          {/* Persistent Multi-Section 3D Glass Prism Monolith & Shards */}
-          <TradingPrismMonolith3D />
+          {/* Institutional 3D Order Flow & Candlestick Volumetric Matrix */}
+          <TradingOrderFlow3D />
 
-          {/* Multi-Section Floating Particles */}
-          <FloatingParticles3D count={isTouchDevice ? 40 : 120} />
+          {/* Floating Quantitative Particles */}
+          <FloatingParticles3D count={isTouchDevice ? 35 : 90} />
         </Suspense>
       </Canvas>
     </div>
